@@ -1,0 +1,559 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  letter-spacing: -2px;
+  font-family: "Space Mono", monospace;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+*::selection {
+  color: #000;
+  background: #fff;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+main {
+  width: 100%;
+  position: relative;
+  background: #000;
+  z-index: -2;
+}
+
+#bg {
+  min-width: 100vw !important;
+  min-height: 100vh !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 1;
+}
+
+#loader {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #01010f;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#loader p {
+  font-size: 1.5vw;
+  color: #fff;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+#scrollIndicator {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 0.5vw;
+  height: 0;
+  background-color: #8f8f8f8f;
+  box-shadow: 1px 4px 10px #8f8f8f8f;
+  transition: linear height 0.3s;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vw 3vw;
+  margin: 1vw 2.5%;
+  background: rgba(0, 0, 0, 0.356);
+  border-radius: 50px;
+  box-shadow: 0 4px 30px #a0a0a022;
+  backdrop-filter: blur(9px);
+  border: 1px solid #3f3f3f;
+  -webkit-backdrop-filter: blur(9px);
+  position: fixed;
+  width: 95%;
+  z-index: 9;
+}
+
+.navbar-brand a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 1w;
+  letter-spacing: 1px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.made-by-tulip a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 1vw;
+  letter-spacing: 1px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+nav .links {
+  display: flex;
+  gap: 3vw;
+}
+
+nav .links a {
+  font-size: 1.25vw;
+  text-transform: uppercase;
+  transition: all 357ms ease-out;
+  color: #ccc;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+}
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.hero .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 3vw;
+  width: 60%;
+  height: 100%;
+  padding: 1vw 5vw;
+}
+
+.hero .text h1 {
+  text-align: left;
+  font-size: 7vw;
+  line-height: 6vw;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: -5px;
+  word-spacing: -15px;
+}
+
+.hero .text p {
+  font-size: 1vw;
+  padding: 1vw 2vw;
+  text-transform: uppercase;
+  border: 1px solid #8c8c8c;
+  transition: all 357ms ease-out;
+  letter-spacing: 1.5px;
+  writing-mode: horizontal-tb;
+}
+
+.hero .vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  font-size: 1vh;
+  letter-spacing: 1px;
+  padding: 2vw;
+  padding-right: 5vw;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.vertical-text span {
+  font-size: 1vw;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.page2 {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2vw;
+  position: relative;
+  z-index: 2;
+  padding: 0 5vw;
+  color: #fff;
+}
+
+.page2 h1 {
+  text-align: center;
+  font-size: 5vw;
+  line-height: 6vw;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+
+.page2 h5 {
+  text-align: center;
+  font-size: 1.2vw;
+  line-height: 2vw;
+  font-weight: 100;
+  width: 50%;
+  letter-spacing: 0px;
+}
+.page2 p {
+  font-size: 1.5vw;
+  padding: 1vw 2.5vw;
+  text-transform: uppercase;
+  border: 1px solid #8c8c8c;
+  transition: all 357ms ease-out;
+}
+
+.design-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  flex-direction: column;
+  gap: 2vw;
+  position: relative;
+  z-index: 2;
+  padding: 0 5vw;
+  color: #fff;
+  text-align: right;
+}
+
+.design-section h1 {
+  font-size: 5vw;
+  line-height: 6vw;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+
+.design-section p {
+  width: 60%;
+  font-size: 1.5vw;
+  text-transform: uppercase;
+  transition: all 357ms ease-out;
+}
+
+.experience-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 2vw;
+  position: relative;
+  z-index: 2;
+  padding: 0 5vw;
+  color: #fff;
+  text-align: left;
+}
+
+.experience-section h1 {
+  font-size: 5vw;
+  line-height: 6vw;
+  font-weight: 100;
+  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: -2px;
+}
+
+.experience-section p {
+  width: 60%;
+  font-size: 1.5vw;
+  text-transform: uppercase;
+  text-align: left;
+  transition: all 357ms ease-out;
+}
+
+.footer-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2vw;
+  position: relative;
+  z-index: 2;
+  padding: 0 5vw;
+  color: #fff;
+  text-align: center;
+}
+
+.footer-section h1 {
+  font-size: 5vw;
+  line-height: 6vw;
+  font-weight: 100;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: -2px;
+}
+
+.footer-section p {
+  width: 60%;
+  font-size: 1.5vw;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 357ms ease-out;
+}
+
+@media (max-width: 650px) {
+  #loader {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #01010f;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #loader p {
+    font-size: 1.5vw;
+    color: #fff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 1vw;
+    padding: 1vw 3vw;
+    background: rgba(0, 0, 0, 0.356);
+    border-radius: 50px;
+    box-shadow: 0 4px 30px #a0a0a022;
+    backdrop-filter: blur(9px);
+    border: 1px solid #3f3f3f;
+    -webkit-backdrop-filter: blur(9px);
+    position: fixed;
+    width: 75vw;
+    margin: 2% 12vw;
+    z-index: 9;
+  }
+
+  .navbar-brand a {
+    color: #ccc;
+    display: none;
+    font-size: 1vw;
+    letter-spacing: 1px;
+    font-weight: 900;
+  }
+
+  .made-by-tulip a {
+    color: #ccc;
+    display: none;
+    font-size: 1vw;
+    letter-spacing: 1px;
+    font-weight: 900;
+  }
+
+  nav .links {
+    display: flex;
+    gap: 4vw;
+  }
+
+  nav .links a {
+    font-size: 1.25vw;
+    text-transform: uppercase;
+    transition: all 357ms ease-out;
+    color: #ccc;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+  }
+
+  .hero {
+    width: 100%;
+    flex-direction: column;
+  }
+  .hero .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 3vw;
+    width: 100%;
+    height: 100%;
+    padding: 1vw 5vw;
+  }
+
+  .hero .text h1 {
+    text-align: left;
+    font-size: 15vw;
+    line-height: 13vw;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    word-spacing: -5px;
+  }
+
+  .hero .text p {
+    font-size: 3vw;
+    padding: 1.5vw 3vw;
+    text-transform: uppercase;
+    border: 1px solid #8c8c8c;
+    transition: all 357ms ease-out;
+    letter-spacing: 1.5px;
+    writing-mode: horizontal-tb;
+  }
+
+  .hero .vertical-text {
+    writing-mode: horizontal-tb;
+    text-orientation: sideways;
+    font-size: 1vh;
+    letter-spacing: 1px;
+    padding: 2vw;
+    padding-right: 5vw;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .vertical-text span {
+    font-size: 1vw;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+
+  .page2 h1 {
+    font-size: 15vw;
+    line-height: 14vw;
+  }
+
+  .page2 h5 {
+    font-size: 5vw;
+    line-height: 6vw;
+    width: 100%;
+    margin: 5vw;
+  }
+  .page2 p {
+    font-size: 4vw;
+    padding: 3vw 5vw;
+  }
+
+  .design-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex-direction: column;
+    gap: 5vw;
+    position: relative;
+    z-index: 2;
+    padding: 0 5vw;
+    color: #fff;
+    text-align: right;
+  }
+
+  .design-section h1 {
+    font-size: 15vw;
+    line-height: 13vw;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+  }
+
+  .design-section p {
+    width: 85%;
+    font-size: 4vw;
+    text-transform: uppercase;
+    transition: all 357ms ease-out;
+  }
+
+  .experience-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 5vw;
+    position: relative;
+    z-index: 2;
+    padding: 0 5vw;
+    color: #fff;
+    text-align: left;
+  }
+
+  .experience-section h1 {
+    font-size: 15vw;
+    line-height: 13vw;
+    font-weight: 100;
+    text-transform: uppercase;
+    text-align: left;
+    letter-spacing: -2px;
+  }
+
+  .experience-section p {
+    width: 85%;
+    font-size: 4vw;
+    text-transform: uppercase;
+    text-align: left;
+    transition: all 357ms ease-out;
+  }
+
+  .footer-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5vw;
+    position: relative;
+    z-index: 2;
+    padding: 0 5vw;
+    color: #fff;
+    text-align: center;
+  }
+
+  .footer-section h1 {
+    font-size: 15vw;
+    line-height: 13vw;
+    font-weight: 100;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: -2px;
+  }
+
+  .footer-section p {
+    width: 85%;
+    font-size: 4vw;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all 357ms ease-out;
+  }
+}
