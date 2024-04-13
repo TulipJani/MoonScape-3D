@@ -355,7 +355,7 @@ nav .links a {
     align-items: center;
     flex-direction: column;
     gap: 1vw;
-    padding: 1vw 3vw;
+    padding: 1.5vw 3.25vw;
     background: rgba(0, 0, 0, 0.356);
     border-radius: 50px;
     box-shadow: 0 4px 30px #a0a0a022;
@@ -371,7 +371,7 @@ nav .links a {
   .navbar-brand a {
     color: #ccc;
     display: none;
-    font-size: 1vw;
+    font-size: 2vw;
     letter-spacing: 1px;
     font-weight: 900;
   }
@@ -379,7 +379,7 @@ nav .links a {
   .made-by-tulip a {
     color: #ccc;
     display: none;
-    font-size: 1vw;
+    font-size: 2vw;
     letter-spacing: 1px;
     font-weight: 900;
   }
@@ -390,12 +390,12 @@ nav .links a {
   }
 
   nav .links a {
-    font-size: 1.25vw;
+    font-size: 3vw;
     text-transform: uppercase;
     transition: all 357ms ease-out;
     color: #ccc;
     text-decoration: none;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.7px;
   }
 
   .hero {
